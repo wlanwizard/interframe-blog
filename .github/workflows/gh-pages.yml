@@ -1,0 +1,53 @@
+name: Deploy Hugo (Blowfish) to Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout repo
+      - uses: actions/checkout@v4
+        with:
+          submodules: true  # only if you add themes as git submodules
+
+      # 2. Setup Node (needed for Tailwind/PostCSS)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Install Node deps (postcss, autoprefixer, tailwindcss)
+      - run: npm install
+
+      # 4. Setup Hugo (Extended)
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.134.2'
+          extended: true
+
+      # 5. Build site
+      - run: hugo --minify
+
+      # 6. Upload artifact for Pages
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
