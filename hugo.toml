@@ -1,0 +1,7 @@
+baseURL = 'https://interframe.space/'
+languageCode = 'en-us'
+title = 'interframe.space - a wifi networking blog'
+
+[module]
+  [[module.imports]]
+    path = "github.com/nunocoracao/blowfish/v2"
