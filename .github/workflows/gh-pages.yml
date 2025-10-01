@@ -15,21 +15,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: true   # only needed if you use git submodules for themes
 
+      # Node for Tailwind/PostCSS
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install
+      - run: npm ci || npm install
 
+      # Hugo Extended (match your local 0.150.1)
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.134.2'
+          hugo-version: '0.150.1'
           extended: true
 
-      - run: hugo --minify
+      # Quick diagnostics then build
+      - run: |
+          echo "=== versions ==="
+          hugo version
+          node -v
+          npm -v
+          echo "=== mod graph ==="
+          hugo mod graph || true
+          echo "=== build ==="
+          hugo --minify --panicOnWarning
 
+      # Upload built site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
