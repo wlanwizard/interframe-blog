@@ -14,29 +14,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 1. Checkout repo
       - uses: actions/checkout@v4
         with:
-          submodules: true  # only if you add themes as git submodules
+          submodules: true   # only needed if you use git submodules for themes
 
-      # 2. Setup Node (needed for Tailwind/PostCSS)
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      # 3. Install Node deps (postcss, autoprefixer, tailwindcss)
       - run: npm install
 
-      # 4. Setup Hugo (Extended)
       - uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.134.2'
           extended: true
 
-      # 5. Build site
       - run: hugo --minify
 
-      # 6. Upload artifact for Pages
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
@@ -50,4 +43,3 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-
