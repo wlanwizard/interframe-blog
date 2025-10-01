@@ -4,5 +4,50 @@
 
   <url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-09-30T18:35:32-06:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/post-one/</loc>
+    <lastmod>2025-09-30T18:35:32-06:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-09-30T18:35:32-06:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/wifi6e6ghz-deployment-lessons/</loc>
+    <lastmod>2023-02-23T20:36:02+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/ekahau-map-swap-trick/</loc>
+    <lastmod>2021-10-31T15:40:16+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/meraki-ap-identification/</loc>
+    <lastmod>2021-10-31T15:40:16+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/convert-floorplans-from-pdf-to-png-with-poppler/</loc>
+    <lastmod>2021-10-31T15:40:15+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/first-look-intel-ax210-6e-adapter-on-windows/</loc>
+    <lastmod>2021-10-31T15:40:15+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/meraki-mr-cable-routing-disconnects/</loc>
+    <lastmod>2021-10-31T15:40:15+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/wireshark-80211-retry-filters/</loc>
+    <lastmod>2021-10-31T15:40:15+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/wpa3-sae-anti-clog-frame-exchanges/</loc>
+    <lastmod>2021-10-31T15:40:15+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/wpa3-sae-on-the-9800/</loc>
+    <lastmod>2021-10-31T15:40:15+00:00</lastmod>
   </url>
 </urlset>

@@ -7,7 +7,203 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2025 </copyright>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Sep 2025 18:35:32 -0600</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Post One</title>
+      <link>http://localhost:1313/posts/post-one/</link>
+      <pubDate>Tue, 30 Sep 2025 18:35:32 -0600</pubDate>
+      
+      <guid>http://localhost:1313/posts/post-one/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Blog Keyworks 🎉 
+    &lt;div id=&#34;blog-keyworks-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#blog-keyworks-&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;p&gt;Cisco WLAN
+Meraki WLAN
+Juniper WLAN
+Cisco Identity Serices Engineer (ISE)
+Ekahau
+Wi-Fi Design and Troubleshooting
+Proxmox
+NetDevOps&lt;/p&gt;
+&lt;p&gt;This post is written in &lt;strong&gt;Markdown&lt;/strong&gt;, and styled with Tailwind through the Blowfish theme.&lt;/p&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Example One 
+    &lt;div id=&#34;example-one&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#example-one&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Item one&lt;/li&gt;
+&lt;li&gt;Item two&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Code will be served up like:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>WIFi6E/6Ghz Deployment Lessons</title>
+      <link>http://localhost:1313/posts/wifi6e6ghz-deployment-lessons/</link>
+      <pubDate>Thu, 23 Feb 2023 20:36:02 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/wifi6e6ghz-deployment-lessons/</guid>
+      <description>&lt;p&gt;This post will list some of the lessons learned from a Meraki 9166 deployment (FW: 29.4.1) of a 6Ghz WLAN and using Ekahau Survey + iPad + Sidekick2 (FW: 1.0.82) to gather data and Ekahau AI Pro 11.1.3 for analysis. Keep in mind these are observations in Feb 2023 and many lessons may be moot or reversed as firmware/code matures.&lt;/p&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;How does Meraki out-of-band discovery operate? 
+    &lt;div id=&#34;how-does-meraki-out-of-band-discovery-operate&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#how-does-meraki-out-of-band-discovery-operate&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+&lt;p&gt;Reduced Neighboor Reports (RNR&amp;rsquo;s) are the mandatory out-of-band discovery method if other 2.4 or 5Ghz SSID&amp;rsquo;s exist on an AP. These are extra fields in beacon frames that direct clients on how to find 6Ghz SSID&amp;rsquo;s and BSSID&amp;rsquo;s while listening on 2.4 and 5Ghz. However, with a multiple BSSID/SSID configuration it wasn&amp;rsquo;t clear if all SSID&amp;rsquo;s or which SSID(s) would include RNR on a given AP. Below is my configuration with WPA2 and an Open SSID in the first 2 SSID &amp;ldquo;slots&amp;rdquo; of the Merkai SSID config. These have RNR&amp;rsquo;s and the 3rd which is my dual 5 and 6Ghz WPA3 SSID does not. This leads me to think if the first 2 were disabled, the 3rd 6Ghz SSID would become un-discoverable for devices that rely on RNR&amp;rsquo;s only.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Ekahau Map Swap Trick</title>
+      <link>http://localhost:1313/posts/ekahau-map-swap-trick/</link>
+      <pubDate>Sun, 31 Oct 2021 15:40:16 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/ekahau-map-swap-trick/</guid>
+      <description>&lt;p&gt;Its common during the WLAN design cycle for floor plans to change especially if new construction is involved. If you&amp;rsquo;re using a tool such as Ekahau Pro its possible to use the map swap feature but unless the new map has the same dimensions Ekahau will reject it. Walls and alignment points need to line up. This can get tricky if maps come from different sources. Note: map swap only works with raster (png, jpg) map, it won&amp;rsquo;t work if the original map was CAD.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Meraki AP Identification</title>
+      <link>http://localhost:1313/posts/meraki-ap-identification/</link>
+      <pubDate>Sun, 31 Oct 2021 15:40:16 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/meraki-ap-identification/</guid>
+      <description>&lt;p&gt;By default, Meraki does not advertise the AP (MR) name in beacons. This can be confusing doing a survey in a tool such as Ekahau and trying to find an AP in the seemingly random BSSID&amp;rsquo;s used by the AP radios. If you need to determine the BSSID to AP mapping after the fact, you can use the Meraki API to pull that information. My colleague has such a PowerShell script available &lt;a
+  href=&#34;https://github.com/huntsman95/Meraki_APNameBSSID&#34;
+    target=&#34;_blank&#34;
+  &gt;here&lt;/a&gt; to make the job easier.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Convert Floorplans from PDF to PNG with Poppler</title>
+      <link>http://localhost:1313/posts/convert-floorplans-from-pdf-to-png-with-poppler/</link>
+      <pubDate>Sun, 31 Oct 2021 15:40:15 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/convert-floorplans-from-pdf-to-png-with-poppler/</guid>
+      <description>&lt;p&gt;The Ekahau Advanced course demonstrates many benefits of using raster-based/png maps in Ekahau over CAD/vector. It decreases application load times, makes cropping and image manipulation possible, and lets you swap out images at a later time if floor plans change (&lt;a
+  href=&#34;https://interframe.space/ekahau-map-swap-trick/&#34;
+    target=&#34;_blank&#34;
+  &gt;here is a post on Ekahau map swap&lt;/a&gt;). I&amp;rsquo;ve found it&amp;rsquo;s often faster to manually draw walls on a PNG image than it is to wait for Ekahau to process DWF files during import. You also have control over how walls are drawn. If you can get high-resolution png&amp;rsquo;s, you can still zoom in with enough detail for surveys and analysis.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>First Look: Intel AX210 6E Adapter on Windows</title>
+      <link>http://localhost:1313/posts/first-look-intel-ax210-6e-adapter-on-windows/</link>
+      <pubDate>Sun, 31 Oct 2021 15:40:15 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/first-look-intel-ax210-6e-adapter-on-windows/</guid>
+      <description>&lt;p&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;&#34; src=&#34;https://interframe.space/wp-content/uploads/2020/12/future-now-icon.png&#34;&gt;
+
+  
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;The future of WiFi in 6Ghz is here! Sortof. Since the FCC announced the 6Ghz band was opening up for Wi-Fi in April 2020 many of us have been eagerly awaiting the new hardware to try out this new 1200Mhz of spectrum. While ASUS and Samsung have announced some early consumer-focused gear, the undercover launch of Intel&amp;rsquo;s AX210 802.11ax 6E adapter marks the start of enterprise Wi-Fi in the new band.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Meraki MR Cable Routing Disconnects</title>
+      <link>http://localhost:1313/posts/meraki-mr-cable-routing-disconnects/</link>
+      <pubDate>Sun, 31 Oct 2021 15:40:15 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/meraki-mr-cable-routing-disconnects/</guid>
+      <description>&lt;p&gt;The MR-56 and other Meraki access points feature similar Ethernet cable path routing that curves within the AP housing and out through the mounting plate. I recently ran into a puzzling issue on a project installing MR-56&amp;rsquo;s where the AP would be mounted, get POE then fail to bring up Ethernet link. The issue was repeating on multiple AP&amp;rsquo;s.&lt;/p&gt;
+&lt;p&gt;The first suspect was the cabling, thinking the POE pins were connecting but not the Ethernet. The cabling contractor re-tested again from the jack to the patch panel finding no issues. I also tested the AP, switch port, and patch cables but all were good. The AP also worked directly connected to the switch. So what was going on?&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Wireshark 802.11 Retry Filters</title>
+      <link>http://localhost:1313/posts/wireshark-80211-retry-filters/</link>
+      <pubDate>Sun, 31 Oct 2021 15:40:15 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/wireshark-80211-retry-filters/</guid>
+      <description>&lt;p&gt;802.11 frame retries are one of the most important metrics to judge the quality of WLAN communications. Excessive attempts at transmitting 802.11 data frames will result in delay and reduced throughput. For real-time traffic retries should be under 5% while 15% or less is considered typical for a WLAN serving data applications.&lt;/p&gt;
+&lt;p&gt;Retries can be caused by interference, hidden nodes, unequal power on up-link/down-links as examples. Since this varies from client to client, by location, and even in link direction, it&amp;rsquo;s often critical during troubleshooting to narrow down the particular data stream you&amp;rsquo;re concerned about to isolate the issue. This is where using Wireshark and display filters come in handy.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>WPA3 SAE Anti-Clog Frame Exchanges</title>
+      <link>http://localhost:1313/posts/wpa3-sae-anti-clog-frame-exchanges/</link>
+      <pubDate>Sun, 31 Oct 2021 15:40:15 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/wpa3-sae-anti-clog-frame-exchanges/</guid>
+      <description>&lt;p&gt;The WPA3 SAE authentication mechanism (a variant of Dragonfly) is the replacement for WPA2-PSK. It offers improved encryption, perfect forward secrecy, and is resistant to offline attacks. However, online attacks can be attempted and while cracking the encryption does not seem possible, making the AP calculate the new encryption keys could cause high CPU utilization resulting in DoS. The standard has deployed anti-clogging tokens to counteract this. This is best explained by Hemant Chaskar on this excellent &lt;a
+  href=&#34;https://securityscoops.com/2019/04/10/wpa3-security-weaknesses-discovered/&#34;
+    target=&#34;_blank&#34;
+  &gt;blog&lt;/a&gt;:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>WPA3 SAE on the 9800</title>
+      <link>http://localhost:1313/posts/wpa3-sae-on-the-9800/</link>
+      <pubDate>Sun, 31 Oct 2021 15:40:15 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/wpa3-sae-on-the-9800/</guid>
+      <description>&lt;p&gt;This post will show how to configure and verify operation of WPA3 - Simultaneous Authentication of Equals (SAE) on a 9115 EWC 9800. WPA3-SAE is the replacement for WPA2-PSK that thwarts offline attacks.&lt;/p&gt;
+&lt;p&gt;Details of setup:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cisco 9115 AP running 9800 Embedded Wireless Controller: 16.12.03&lt;/li&gt;
+&lt;li&gt;Windows 10 with Killer Wi-Fi 6 AX1650 (Intel AX-200) client, driver version 21.10.1.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;WLAN Configuration:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wlan interframe.wpa3 3 interframe.wpa3
+ radio dot11a
+ no security ft adaptive
+ no security wpa wpa2
+ security wpa psk set-key ascii 0 secret123
+ no security wpa akm dot1x
+ security wpa akm sae
+ security wpa wpa3
+ security pmf mandatory
+ no shutdown
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;&#34; src=&#34;https://interframe.space/wp-content/uploads/2020/05/wlan-gui.png&#34;&gt;
+
+  
+&lt;/figure&gt;
+&lt;/p&gt;</description>
+      
+    </item>
     
   </channel>
 </rss>

@@ -1,13 +1,34 @@
 baseURL = "https://wlanwizard.github.io/interframe-blog/"
-languageCode = 'en-us'
-title = 'interframe.space - a wifi networking blog'
+languageCode = "en-us"
+title = "interframe.space - a wifi networking blog"
+
+# Make sure Hugo uses your project's default folders
+staticDir = ["static"]
 
 [module]
+  # Mount YOUR site dirs (these lines make your local static/ visible)
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+
+  # Theme import
   [[module.imports]]
     path = "github.com/nunocoracao/blowfish/v2"
 
 [params]
-  mainSections = ["posts"]   # helps themes know which section to list on home
+  mainSections = ["posts"]
 
 [menu]
   [[menu.main]]
