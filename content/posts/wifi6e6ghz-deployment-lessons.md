@@ -16,7 +16,7 @@ This post will list some of the lessons learned from a Meraki 9166 deployment (F
 
 Reduced Neighboor Reports (RNR's) are the mandatory out-of-band discovery method if other 2.4 or 5Ghz SSID's exist on an AP. These are extra fields in beacon frames that direct clients on how to find 6Ghz SSID's and BSSID's while listening on 2.4 and 5Ghz. However, with a multiple BSSID/SSID configuration it wasn't clear if all SSID's or which SSID(s) would include RNR on a given AP. Below is my configuration with WPA2 and an Open SSID in the first 2 SSID "slots" of the Merkai SSID config. These have RNR's and the 3rd which is my dual 5 and 6Ghz WPA3 SSID does not. This leads me to think if the first 2 were disabled, the 3rd 6Ghz SSID would become un-discoverable for devices that rely on RNR's only.
 
-![](/images/posts/wifi6e6ghz-deployment-lessons/7ee45bf5-d668-4c62-bad5-361f6f3e4db5.png)
+![](images/posts/wifi6e6ghz-deployment-lessons/7ee45bf5-d668-4c62-bad5-361f6f3e4db5.png)
 
 ### How does Merkai Auto-Channel Work in 6Ghz?
 
